@@ -1,0 +1,179 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+*.log
+
+# FastAPI
+backend/.env
+backend/__pycache__/
+backend/*.pyc
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# React
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.DS_Store
+
+# Docker
+*.pid
+*.db
+*.sqlite3
+
+# OS / Editor generated
+*.swp
+*.swo
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+*.log
+
+# FastAPI
+backend/.env
+backend/__pycache__/
+backend/*.pyc
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# React
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.DS_Store
+
+# Docker
+*.pid
+*.db
+*.sqlite3
+
+# OS / Editor generated
+*.swp
+*.swo
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+*.log
+
+# FastAPI
+backend/.env
+backend/__pycache__/
+backend/*.pyc
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# React
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.DS_Store
+
+# Docker
+*.pid
+*.db
+*.sqlite3
+
+# OS / Editor generated
+*.swp
+*.swo
+# Python
+__pycache__/
+*.py[cod]
+*.egg
+*.egg-info/
+dist/
+build/
+.env
+.venv/
+*.log
+
+# FastAPI
+backend/.env
+backend/__pycache__/
+backend/*.pyc
+
+# VS Code
+.vscode/
+
+# macOS
+.DS_Store
+
+# React
+frontend/node_modules/
+frontend/build/
+frontend/.env
+frontend/.DS_Store
+
+# Docker
+*.pid
+*.db
+*.sqlite3
+
+# OS / Editor generated
+*.swp
+*.swo
+.idea/
+*.bak
+
+# Pytest
+.cache/
+*.coverage
+htmlcov/
+pytest_cache/
+
+# Logs
+*.log
+*.out
+
+# Local environment
+*.local
+
+# Misc
+*.zip
+*.tar.gz
+
+
+# Ignore Python + FastAPI env files
+.venv/
+backend/.env
+
+# Ignore React env and build files
+frontend/.env
+frontend/node_modules/
+frontend/build/
+
+# Ignore other common junk
+__pycache__/
+*.pyc
+.DS_Store
+
