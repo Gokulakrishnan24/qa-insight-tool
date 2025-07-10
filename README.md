@@ -1,41 +1,123 @@
-# 🧠 QA Insight Tool (POC)
+# QA Insight Tool: AI-Powered Test Intelligence Dashboard
 
-A full-stack internal QA dashboard for visualizing test results and generating AI-based test case suggestions using OpenAI.
+## 📊 Project Overview
 
----
+The **QA Insight Tool** is an end-to-end test intelligence platform that helps QA engineers:
 
-## 🔧 Tech Stack
-
-- **Backend**: FastAPI + Uvicorn + OpenAI API
-- **Frontend**: React + Chart.js + Axios
-- **Testing**: Pytest
-- **Containerization**: Docker & Docker Compose
-- **CI/CD**: GitHub Actions (planned)
-- **Deployment**: Localhost / AWS EC2
+* 📈 Monitor flaky tests and analyze failure patterns
+* 🧠 Use OpenAI to generate smart test suggestions from PR and bug descriptions
+* ⚙️ Automate test artifact ingestion from Pytest
+* 🚀 Deploy to the cloud with Docker, Render, Vercel, and GitHub Actions
 
 ---
 
-## 📊 Features
+## 🛠️ Architecture
 
-- Track test artifacts (name, status, reason, run ID)
-- Flaky test leaderboard (rank by fail count)
-- Bar chart (pass/fail per test case)
-- OpenAI-powered suggestions based on PRs + bug summary
-- REST API powered by FastAPI
-- React dashboard with Chart.js visualizations
+```
+Frontend (React + Chart.js)
+  └─→ GET /artifacts ➞ Leaderboard Chart
+  └─→ POST /suggest  ➞ Generate AI Test Scenarios
+
+Backend (FastAPI)
+  └─→ /artifacts  ➞ Store + Fetch Test Results
+  └─→ /suggest    ➞ OpenAI ChatCompletion API
+
+Database (in-memory or persistent store)
+```
 
 ---
 
-## 📦 Installation
+## 📚 Features
 
-```bash
-# Clone the repo
-git clone https://github.com/yourname/qa-insight-tool.git
-cd qa-insight-tool
+### 🤖 AI Test Suggestion Generator
 
-# Add your OpenAI API key
-export OPENAI_API_KEY=your_key_here
-# OR use .env and docker-compose
+* Input: PR description and bug summary
+* Output: 3 test ideas (Functional, Edge, Regression)
+* Backed by OpenAI API (gpt-3.5-turbo)
 
-# Build and start
-docker-compose up --build
+### 📊 Flaky Test Dashboard
+
+* Visual leaderboard of test failures
+* Useful for identifying unstable tests and patterns
+* Filterable by `run_id` or time (enhancement ready)
+
+### ⚖️ Auto-post Pytest Failures
+
+* Pytest plugin that auto-posts to `/artifacts`
+* Captures `test_name`, `status`, `reason`, `timestamp`, and `run_id`
+
+### 🚜 CI/CD + Deployment
+
+* GitHub Actions for CI/CD
+* Dockerized backend (`Dockerfile`)
+* Deployed backend to **Render**
+* Deployed frontend to **Vercel**
+
+---
+
+## 📂 Technologies Used
+
+| Layer    | Stack                               |
+| -------- | ----------------------------------- |
+| Frontend | React, Chart.js, Axios              |
+| Backend  | FastAPI, Uvicorn, Pydantic          |
+| AI       | OpenAI API (ChatCompletion)         |
+| CI/CD    | GitHub Actions + Docker             |
+| Hosting  | Render (backend), Vercel (frontend) |
+
+---
+
+## 🔹 Usage
+
+### 🌐 Web Dashboard
+
+* View flaky test leaderboard from `/artifacts`
+* Generate test ideas via form `/suggest`
+
+### 💻 API Endpoints
+
+```http
+POST /artifacts
+GET /artifacts
+POST /suggest
+```
+
+### 🎓 Example AI Prompt Output
+
+```
+PR: Refactored login flow with new OTP handling
+Bug: Previous OTP mismatch issue fixed
+
+Suggestions:
+1. Verify user can enter OTP and login successfully
+2. Submit an expired OTP and check for error
+3. Ensure password login works after OTP refactor
+```
+
+---
+
+## 📅 Roadmap
+
+* [x] OpenAI-based test suggestion feature
+* [x] Pytest failure tracking + dashboard
+* [x] Dockerized backend + GitHub CI/CD
+* [x] Deployment to cloud (Render + Vercel)
+* [ ] Add filter support by `run_id` or time
+* [ ] Add authentication layer (optional)
+* [ ] Persistent DB (SQLite or PostgreSQL)
+
+---
+
+## 👩‍🚀 Author
+
+**Gokulakrishnan**
+SDET | Test Automation Engineer | AI-in-Testing Innovator
+
+---
+
+## 🔗 Links
+
+* GitHub: [github.com/Gokulakrishnan24/qa-insight-tool](https://github.com/Gokulakrishnan24/qa-insight-tool)
+* OpenAI API Key: [https://platform.openai.com/account/api-keys](https://platform.openai.com/account/api-keys)
+* Render: [https://render.com](https://render.com)
+* Vercel: [https://vercel.com](https://vercel.com)
